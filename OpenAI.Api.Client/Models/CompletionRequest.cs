@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace OpenAI.Api.Client.Models
 {
-    public class Request
+    public class CompletionRequest
     {
         [JsonPropertyName("model")]
         public string Model { get; set; }

@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace OpenAI.Api.Client.Models
 {
-    public class Response
+    public class CompletionResponse
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

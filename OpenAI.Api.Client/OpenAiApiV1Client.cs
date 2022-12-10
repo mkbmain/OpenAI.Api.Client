@@ -24,9 +24,9 @@ namespace OpenAI.Api.Client
 
         public virtual Task<OpenAiModel> GetModel(string model) => Request<OpenAiModel>(new HttpRequestMessage(HttpMethod.Get, $"models/{model}"));
 
-        public virtual Task<Response> MakeRequest(Request request) => Request<Response>(new HttpRequestMessage(HttpMethod.Post, "completions")
+        public virtual Task<CompletionResponse> PostCompletion(CompletionRequest completionRequest) => Request<CompletionResponse>(new HttpRequestMessage(HttpMethod.Post, "completions")
         {
-            Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(request), Encoding.Default, "application/json"),
+            Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(completionRequest), Encoding.Default, "application/json"),
         });
 
         private async Task<T> Request<T>(HttpRequestMessage message) =>
