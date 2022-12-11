@@ -5,7 +5,7 @@ namespace OpenAI.Api.Client.Models
     public class Permission
     {
         [JsonPropertyName("id")]
-        public string id { get; set; }
+        public string Id { get; set; }
 
         [JsonPropertyName("object")]
         public string @Object { get; set; }
